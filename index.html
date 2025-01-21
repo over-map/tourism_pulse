@@ -43,7 +43,7 @@ class CustomNavigationControl {
         compassButton.type = 'button';
         compassButton.title = 'Reset Bearing';
         compassButton.onclick = () => this._map.rotateTo(0);
-        compassButton.innerHTML = '⟲';
+        compassButton.innerHTML = '↑';
         this._container.appendChild(compassButton);
         
         return this._container;
@@ -71,7 +71,7 @@ maplibregl.addProtocol("pmtiles", async (params, callback) => {
 // Create the map directly
 const map = new maplibregl.Map({
     container: 'map',
-    style: 'https://over-map.github.io/tourism_pulse/public/styles/autumn_embrace.json',
+    style: 'https://over-map.github.io/tourism_pulse/public/styles/style.json',
     center: [-74.006, 40.7128],
     zoom: 15,
     transformRequest: (url, resourceType) => {
