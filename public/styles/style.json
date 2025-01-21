@@ -9,46 +9,15 @@
     "versatiles-shortbread": {
       "type": "vector",
       "url": "https://vector.openstreetmap.org/shortbread_v1/tilejson.json"
-    },
-    "terrain": {
-      "type": "raster-dem",
-      "tiles": [
-        "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
-      ],
-      "tileSize": 256,
-      "maxzoom": 14,
-      "encoding": "terrarium"
     }
   },
-  "sprite": "https://over-map.github.io/urban_comparator/public/sprites/sprites",
-  "glyphs": "https://over-map.github.io/urban_comparator/public/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://over-map.github.io/tourism_pulse/public/sprites/sprites",
+  "glyphs": "https://over-map.github.io/tourism_pulse/public/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
       "type": "background",
       "paint": {"background-color": "#042940"}
-    },
-    {
-      "id": "terrain-detail",
-      "type": "hillshade",
-      "source": "terrain",
-      "paint": {
-        "hillshade-illumination-direction": 135,
-        "hillshade-exaggeration": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          1,
-          0.4,
-          9.5,
-          0.4,
-          10,
-          0.4
-        ],
-        "hillshade-shadow-color": "#1A3241",
-        "hillshade-highlight-color": "#2C4946",
-        "hillshade-accent-color": "#3A3F2A"
-      }
     },
     {
       "id": "water-ocean",
