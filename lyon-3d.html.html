@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyon Textured Buildings</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.27/"></script>
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="viewDiv"></div>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/SceneView",
+            "esri/layers/SceneLayer"
+        ], function (Map, SceneView, SceneLayer) {
+            // Create a new map with a default basemap
+            const map = new Map({
+                basemap: "streets",  // This is the basemap for the ArcGIS SceneView
+                ground: "world-elevation"
+            });
+
+            // Create the SceneView with the initial camera position
+            const view = new SceneView({
+                container: "viewDiv",
+                map: map,
+                camera: {
+                    position: {
+                        x: 4.8357, // Longitude of Lyon
+                        y: 45.7640, // Latitude of Lyon
+                        z: 1000 // Elevation in meters
+                    },
+                    tilt: 60
+                }
+            });
+
+            // Create a SceneLayer to display Lyon's textured buildings
+            const lyonBuildingsLayer = new SceneLayer({
+                url: "https://services2.arcgis.com/cFEFS0EWrhfDeVw9/arcgis/rest/services/STM____FR_Lyon__Textured_buildings/SceneServer",
+                title: "Lyon Textured Buildings"
+            });
+
+            // Add the SceneLayer to the map
+            map.add(lyonBuildingsLayer);
+        });
+    </script>
+</body>
+</html>
