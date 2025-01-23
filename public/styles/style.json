@@ -11,8 +11,8 @@
       "url": "https://vector.openstreetmap.org/shortbread_v1/tilejson.json"
     }
   },
-  "sprite": "https://over-map.github.io/urban_comparator/public/sprites/sprites",
-  "glyphs": "https://over-map.github.io/urban_comparator/public/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://over-map.github.io/tourism_pulse/public/sprites/sprites",
+  "glyphs": "https://over-map.github.io/tourism_pulse/public/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
